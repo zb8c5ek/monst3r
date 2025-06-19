@@ -11,7 +11,7 @@ from dust3r.utils.geometry import xy_grid, geotrf, depthmap_to_pts3d
 from dust3r.utils.device import to_cpu, to_numpy
 from dust3r.utils.goem_opt import DepthBasedWarping, OccMask, WarpImage, depth_regularization_si_weighted, tum_to_pose_matrix
 from third_party.raft import load_RAFT
-from sam2.build_sam import build_sam2_video_predictor
+from third_party.sam2.sam2.build_sam import build_sam2_video_predictor
 sam2_checkpoint = "third_party/sam2/checkpoints/sam2.1_hiera_large.pt"
 model_cfg = "configs/sam2.1/sam2.1_hiera_l.yaml"
 

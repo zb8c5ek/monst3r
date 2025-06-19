@@ -22,6 +22,8 @@ from dust3r.utils.viz_demo import convert_scene_output_to_glb, get_dynamic_mask_
 import matplotlib.pyplot as pl
 import cv2
 
+torch.hub.set_dir('torch_hub_cache')
+
 pl.ion()
 torch.backends.cuda.matmul.allow_tf32 = True  # for gpu >= Ampere and pytorch >= 1.12
 
@@ -386,7 +388,7 @@ if __name__ == '__main__':
     if args.server_name is not None:
         server_name = args.server_name
     else:
-        server_name = '0.0.0.0' if args.local_network else '127.0.0.1'
+        server_name = '0.0.0.0' # if args.local_network else '127.0.0.1'
 
     if args.weights is not None and os.path.exists(args.weights):
         weights_path = args.weights
